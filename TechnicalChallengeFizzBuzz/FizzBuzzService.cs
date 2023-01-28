@@ -12,8 +12,13 @@ public class FizzBuzzService : IFizzBuzzService
         return IsMultipleOf(numbertoCheck, 5);
     }
 
-    public bool IsMultipleOf(int numbertoCheck, int multipleOf)
+    private bool IsMultipleOf(int numbertoCheck, int multipleOf)
     {
+        if(multipleOf is 0)
+        {
+            throw new ArgumentException("Multiple of cant be 0");
+        }
+
         return numbertoCheck % multipleOf == 0;
     }
 }
